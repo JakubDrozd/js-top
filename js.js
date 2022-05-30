@@ -16,7 +16,49 @@
 
 let name = "John";
 let admin = name;
-alert(admin);
+console.log(admin);
 
 let ourPlanetName = "Earth";
 let currentUserName = admin;
+const myInt = 5;
+const myIntTwo = 25;
+const myFloat = 6.667;
+const myFloatTwo = 3.143345456;
+console.log(myInt, myFloat, myIntTwo, myFloatTwo);
+console.log(typeof myInt, typeof myFloat, typeof myIntTwo, typeof myFloatTwo);
+
+const fixedMyFloatTwo = myFloatTwo.toFixed(3);
+console.log(fixedMyFloatTwo);
+let myNumber = "72";
+myNumber = myNumber + 3;
+console.log(myNumber);
+myNumber = Number(myNumber) + 3;
+console.log(myNumber);
+
+console.log(10 + 7);
+console.log(9 * 8);
+console.log(60 % 3);
+
+let num1 = 2;
+let num2 = 10;
+// console.log(num1 ** num2);
+// console.log(2 / 10 / (8 + 2));
+num2--;
+console.log(num1);
+
+const btn = document.querySelector("button");
+const txt = document.querySelector("p");
+
+btn.addEventListener("click", updateBtn);
+
+function updateBtn() {
+  if (btn.textContent === "Start") {
+    btn.textContent = "Stop";
+    txt.textContent = "The machine is working...";
+  } else {
+    btn.textContent = "Start";
+    txt.textContent = "The machine isn't working";
+  }
+}
+
+let randomNumber = 32189;
