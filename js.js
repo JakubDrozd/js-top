@@ -62,3 +62,16 @@ function updateBtn() {
 }
 
 let randomNumber = 32189;
+
+console.log(27 + 92);
+console.log((4 + 6 + 9) / 77);
+
+let a = 10;
+console.log(a);
+9 * a;
+let b = 7 * a;
+console.log(b);
+
+const max = 57;
+let actual = max - 13;
+let percentage = actual / max;
