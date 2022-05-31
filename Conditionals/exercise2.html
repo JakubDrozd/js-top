@@ -25,10 +25,10 @@
     let score = 78;
     let machineActive = true;
 
-    if (machineActive == false) {
+    if (!machineActive) {
       score = 0;
       response = "Please turn the machine on";
-    } else if (machineActive == true) {
+    } else {
       if (score < 0 || score > 100) {
         response = "This is not possible, an error has occurred";
       } else if (score <= 19) {
