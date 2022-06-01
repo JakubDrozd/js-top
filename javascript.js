@@ -223,13 +223,27 @@ selectTheme.addEventListener("change", () =>
 // let getANumber = prompt("Choose your number");
 // getANumber > 0 ? alert("1") : getANumber < 0 ? alert("-1") : alert("0");
 
-let result = a + b < 4 ? "below" : "over";
+// let result = a + b < 4 ? "below" : "over";
 
-let message =
-  login === "Employee"
-    ? "Hello"
-    : login === "Director"
-    ? "Greetings"
-    : login === ""
-    ? "No Login"
-    : "";
+// let message =
+//   login === "Employee"
+//     ? "Hello"
+//     : login === "Director"
+//     ? "Greetings"
+//     : login === ""
+//     ? "No Login"
+//     : "";
+
+function f(x) {
+  return (x - 1) * (x + 3);
+}
+
+function welcome(name) {
+  console.log(`Welcome ${name}`);
+}
+
+const log = document.querySelector("p.pressed");
+
+html.addEventListener("keydown", (event) => {
+  log.textContent = `You pressed ${event.key}`;
+});
