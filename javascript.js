@@ -213,3 +213,23 @@ selectTheme.addEventListener("change", () =>
     ? update("#1F2937", "#F9FAF8")
     : update("#F9FAF8", "#1F2937")
 );
+
+// let officialNameQuestion = prompt('What is the "official" name of Javascript');
+// officialNameQuestion === "ECMAScript"
+//   ? alert("Right!")
+//   : alert(`You don't know?
+// "ECMAScript!"`);
+
+// let getANumber = prompt("Choose your number");
+// getANumber > 0 ? alert("1") : getANumber < 0 ? alert("-1") : alert("0");
+
+let result = a + b < 4 ? "below" : "over";
+
+let message =
+  login === "Employee"
+    ? "Hello"
+    : login === "Director"
+    ? "Greetings"
+    : login === ""
+    ? "No Login"
+    : "";
