@@ -247,3 +247,57 @@ const log = document.querySelector("p.pressed");
 html.addEventListener("keydown", (event) => {
   log.textContent = `You pressed ${event.key}`;
 });
+
+function checkAge(age) {
+  return age > 18 || confirm("Did parents allow you?");
+}
+
+function min(a, b) {
+  return a > b ? b : a;
+}
+function pow(a, n) {
+  if (n === 0) {
+    return 1;
+  } else if (n % 2 == 0) {
+    let x = Math.pow(a, n / 2);
+    return x * x;
+  } else {
+    return Math.pow(a, n - 1);
+  }
+}
+
+let sum = (a, b) => a + b;
+let double = (a) => 2 * a;
+let power = (a, n) => {
+  if (n == 0) {
+    return 1;
+  } else if (n % 2 == 0) {
+    let x = Math.pow(a, n / 2);
+    return x ** 2;
+  } else {
+    return a * Math.pow(a, n - 1);
+  }
+};
+
+// let ask = (question, yes, no) => {
+//   confirm(question) ? yes() : no();
+// };
+
+// ask(
+//   "Do you agree?",
+//   () => alert("You agreed"),
+//   () => alert("You canceled the execution.")
+// );
+
+let add7 = (a) => a + 7;
+let multiply = (a, b) => a * b;
+function capitalize(text) {
+  let toLowerCase = text.toLowerCase();
+  let toCapitalFirstLetter =
+    toLowerCase.charAt(0).toUpperCase() + toLowerCase.slice(1);
+  return toCapitalFirstLetter;
+}
+
+function lastLetter(text) {
+  return text.charAt(text.length - 1);
+}
