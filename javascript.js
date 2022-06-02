@@ -301,3 +301,61 @@ function capitalize(text) {
 function lastLetter(text) {
   return text.charAt(text.length - 1);
 }
+
+// let answer = +prompt(
+//   "Please enter the number you would like to FizzBuzz up to: "
+// );
+
+// for (i = 1; i <= answer; i++) {
+//   if (i % 15 == 0) {
+//     console.log("FizzBuzz");
+//   } else if (i % 3 == 0) {
+//     console.log("Fizz");
+//   } else if (i % 5 == 0) {
+//     console.log("Buzz");
+//   } else {
+//     console.log(i);
+//   }
+// }
+
+let array = [58, 78, 91, 1, 74, 26, 34, 34, 2, 69];
+function findThirdHighest(array) {
+  let changed = false;
+  for (i = 0; i < array.length - 1; i++) {
+    let currentNumber = array[i];
+    let nextNumber = array[i + 1];
+    if (currentNumber > nextNumber) {
+      array[i + 1] = currentNumber;
+      array[i] = nextNumber;
+      changed = true;
+    }
+  }
+  if (changed) {
+    console.log(findThirdHighest(array));
+    console.log(array[array.length - 3]);
+  }
+}
+
+function findingThirdLargest() {
+  let first = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > first) {
+      first = array[i];
+    }
+  }
+
+  let second = Number.MIN_VALUE;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > second && array[i] < first) {
+      second = array[i];
+    }
+  }
+
+  let third = Number.MIN_VALUE;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > third && array[i] < second) {
+      third = array[i];
+    }
+  }
+  console.log(third);
+}
