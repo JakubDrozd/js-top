@@ -359,3 +359,6 @@ function findingThirdLargest() {
   }
   console.log(third);
 }
+function helloWorld() {
+  console.log("Hello World!");
+}
