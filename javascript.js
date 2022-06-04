@@ -362,3 +362,115 @@ function findingThirdLargest() {
 function helloWorld() {
   console.log("Hello World!");
 }
+
+function addPL(text) {
+  return text.concat("PL");
+}
+
+const myUsernames = [
+  "PATOX",
+  "Veanty",
+  "Uwusia",
+  "Multicraft",
+  "MulticraftPL",
+  "Informator",
+  "e421",
+  "Echo",
+];
+
+const otherUsernames = [
+  "FazerZ6Seba",
+  "KubolosPL",
+  "Syrenek69",
+  "Bartez",
+  "Czogi",
+];
+
+myUsernames.push("Wojtuś dwanaście lat");
+console.log(myUsernames.join(" * "));
+myUsernames.pop();
+console.log(myUsernames.join(" * "));
+myUsernames.shift();
+console.log(myUsernames.join(" * "));
+myUsernames.unshift("BOT Kyle");
+console.log(myUsernames.join(" * "));
+
+const allUsernames = myUsernames.concat(otherUsernames);
+console.log(allUsernames.join(" * "));
+
+myUsernames.splice(2, 0, "Multee", "Jiller01");
+console.log(myUsernames.join(" * "));
+myUsernames.splice(3, 1);
+console.log(myUsernames.join(" * "));
+
+myCurrentUsernames = myUsernames.slice(1);
+console.log(myCurrentUsernames.join(" * "));
+
+myRealCurrentUsernames = myUsernames.slice(1, 4);
+console.log(myRealCurrentUsernames.join(" * "));
+
+myRealCurrentUsernames.reverse();
+console.log(myRealCurrentUsernames.join(" * "));
+
+const numbers = [40, 100, 1, 5, 25, 10];
+console.log(numbers);
+const sortedASC = numbers.sort((a, b) => {
+  return a - b;
+});
+console.log(sortedASC);
+const sortedDESC = numbers.sort((a, b) => {
+  return b - a;
+});
+console.log(sortedDESC);
+
+function findMaxInArray(array) {
+  return Math.max.apply(null, array);
+}
+
+function findMinInArray(array) {
+  return Math.min.apply(null, array);
+}
+
+function findMinAndMax(array) {
+  return `${Math.min.apply(null, array)} | ${Math.max.apply(null, array)}`;
+}
+
+function arraySortLevelASC(array) {
+  return array.sort((a, b) => {
+    return a.Level - b.Level;
+  });
+}
+
+function sortArrayLevelDESC(array) {
+  return array.sort((a, b) => {
+    return a.Level - b.Level;
+  });
+}
+
+const profiles = [
+  { Username: "PATOX", Level: "99" },
+  { Username: "Gum4", Level: "97" },
+  { Username: "Kapa", Level: "81" },
+  { Username: "Buza", Level: "40" },
+  { Username: "Seb4", Level: "95" },
+  { Username: "Haju", Level: "93" },
+];
+
+console.log(profiles);
+
+// for (const usernames of myUsernames) {
+//   console.log(usernames);
+// }
+
+const upperMyUsernames = myUsernames.map((text) => {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+});
+
+const validMyUsernames = myUsernames.filter((username) => {
+  return username.length > 8;
+});
+
+const myUsernamesWithPL = myUsernames.map((username) => {
+  return username + "PL";
+});
+console.log(myUsernamesWithPL);
