@@ -474,3 +474,75 @@ const myUsernamesWithPL = myUsernames.map((username) => {
   return username + "PL";
 });
 console.log(myUsernamesWithPL);
+
+// for (const usernames of otherUsernames) {
+//   console.log(usernames);
+// }
+
+for (let i = 0; i < myUsernames.length; i++) {
+  console.log(myUsernames[i]);
+}
+
+const myFavoriteGames = [
+  "Elden Ring",
+  "Dark Souls 3",
+  "Rust",
+  "League of Legends",
+  "Terraria",
+];
+
+let sentence = "My favorite games are ";
+
+for (let i = 0; i < myFavoriteGames.length; i++) {
+  if (i === myFavoriteGames.length - 1) {
+    sentence = `${sentence} and ${myFavoriteGames[i]}.`;
+  } else if (i === myFavoriteGames.length - 2) {
+    sentence = `${sentence}${myFavoriteGames[i]}`;
+  } else {
+    sentence = `${sentence}${myFavoriteGames[i]}, `;
+  }
+}
+console.log(sentence);
+
+const contacts = [
+  "Chris:2232322",
+  "Sarah:3453456",
+  "Bill:7654322",
+  "Mary:9998769",
+  "Dianne:9384975",
+];
+
+const input = document.querySelector("#input");
+const button = document.querySelector(".button");
+const searchResult = document.querySelector(".searchResult");
+
+button.addEventListener("click", () => {
+  const searchName = input.value.toLowerCase();
+  input.value = "";
+  input.focus();
+  searchResult.textContent = "";
+  for (const contact of contacts) {
+    const splitContact = contact.split(":");
+    if (splitContact[0].toLowerCase() === searchName) {
+      searchResult.textContent =
+        splitContact[0] + " contact is: " + splitContact[1] + ".";
+      break;
+    }
+  }
+  if (searchResult.textContent === "") {
+    searchResult.textContent = "Contact not found";
+  }
+});
+
+let i = 0;
+
+while (i < myFavoriteGames.length) {
+  if (i === myFavoriteGames.length - 1) {
+    sentence += `and ${myFavoriteGames[i]}`;
+  } else if (i === myFavoriteGames.length - 2) {
+    sentence += `${myFavoriteGames[i]}`;
+  } else {
+    sentence += `${myFavoriteGames[i]},`;
+  }
+  i++;
+}
