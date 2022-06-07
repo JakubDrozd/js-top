@@ -546,3 +546,79 @@ while (i < myFavoriteGames.length) {
   }
   i++;
 }
+
+// for (let i = 2; i <= 10; i++) {
+//   if (i % 2 == 0) {
+//     console.log(i);
+//   }
+// }
+// let bc = 0;
+// while (bc < 3) {
+//   console.log(bc);
+//   bc++;
+// }
+
+// let pickANumber;
+// do {
+//   pickANumber = prompt("Enter a number");
+// } while (pickANumber < 100 && pickANumber);
+
+// function isPrime(number) {
+//   for (let i = 2; i < number; i++) {
+//     if (number % i == 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// for (let i = 2; i <= pickANumber; i++) {
+//   if (isPrime(i)) {
+//     console.log(i);
+//   }
+// }
+const body = document.querySelector("body");
+const container = document.querySelector(".container");
+const controls = document.querySelector(".controls");
+const panel = document.querySelector(".panel");
+const panel2 = document.createElement("div");
+container.insertBefore(panel2, panel);
+panel2.setAttribute("class", "panelBefore");
+panel2.textContent = "It works!";
+const pDOM = document.createElement("p");
+pDOM.textContent = `Hey I'm red!`;
+pDOM.style.color = "red";
+body.appendChild(pDOM);
+
+const headerThree = document.createElement("h3");
+headerThree.style.color = "blue";
+headerThree.textContent = `I'm blue h3!`;
+body.appendChild(headerThree);
+
+const javaDiv = document.createElement("div");
+javaDiv.style.border = "1px solid black";
+javaDiv.style.backgroundColor = "pink";
+body.appendChild(javaDiv);
+
+const headerOne = document.createElement("h1");
+headerOne.textContent = `I'm in a div`;
+
+const paragraphInDiv = document.createElement("p");
+paragraphInDiv.textContent = `ME TOO!`;
+
+javaDiv.appendChild(headerOne);
+javaDiv.appendChild(paragraphInDiv);
+
+const btnOne = document.querySelector(".buttonOne");
+btnOne.addEventListener("click", function (e) {
+  e.target.style.backgroundColor = "pink";
+});
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    alert(button.id);
+  });
+});
+
+document.getElementsByClassName("content").style.fontSize = "2px";
