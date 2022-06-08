@@ -620,5 +620,3 @@ buttons.forEach((button) => {
     alert(button.id);
   });
 });
-
-document.getElementsByClassName("content").style.fontSize = "2px";
