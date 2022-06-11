@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  <script>
+    const myFavoriteBand = {
+      name: "Linkin Park",
+      nationality: "American",
+      genre: "Rock",
+      members: 7,
+      formed: 1996,
+      split: false,
+      albums: [
+        { name: "Hybrid Theory and Reanimation", released: 2002 },
+        { name: "One More Light", released: 2017 },
+      ],
+    };
+    let bandInfo = `${myFavoriteBand.name} is an ${myFavoriteBand.nationality} ${myFavoriteBand.genre} band that was formed in ${myFavoriteBand.formed}.
+    Formely consisted of ${myFavoriteBand.members} members, now consists of 5
+    but they never split. Their most popular albums are ${myFavoriteBand.albums[0].name} released in ${myFavoriteBand.albums[0].released} and ${myFavoriteBand.albums[1].name} released in ${myFavoriteBand.albums[1].released}`;
+    // Don't edit the code below here!
+
+    const section = document.querySelector("section");
+    let para1 = document.createElement("p");
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+  </script>
+</html>
