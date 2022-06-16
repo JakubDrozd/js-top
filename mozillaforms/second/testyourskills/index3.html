@@ -68,8 +68,50 @@
             >
           </li>
         </ul>
+        <label for="mail">E-mail: </label>
+        <input type="email" name="user_mail" id="mail" />
+        <p></p>
+        <label for="search">Search: </label
+        ><input type="search" name="search" id="search" />
+        <p></p>
+        <label for="phone">Phone number: </label
+        ><input type="tel" name="phone" id="phone" />
+        <p></p>
+        <label for="adress">URL: </label
+        ><input type="url" name="adress" id="adress" />
+        <p></p>
+        <label for="amount">Amount: </label
+        ><input type="number" name="amount" id="amount" min="1" max="5" />
+        <label for="price">Price range: </label
+        ><input
+          type="range"
+          name="price"
+          id="price"
+          min="1000"
+          max="30000"
+          step="100"
+          value="1000"
+        />
+        <output class="price" for="price"></output>
+        <p></p>
+        <label for="birth">Date of birth: </label>
+        <input type="date" name="date" id="date" min="2004-01-01" />
+        <p></p>
+        <label for="colorPicker">Pick your color</label>
+        <input type="color" name="colorPicker" id="colorPicker" />
       </fieldset>
+      <p></p>
       <button>Submit</button>
     </form>
+    <script>
+      const price = document.querySelector("#price");
+      const output = document.querySelector(".price");
+
+      output.textContent = price.value;
+
+      price.addEventListener("input", () => {
+        output.textContent = price.value;
+      });
+    </script>
   </body>
 </html>
