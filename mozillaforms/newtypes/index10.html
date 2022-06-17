@@ -93,6 +93,20 @@
         font-size: 0.7em;
         font-style: italic;
       }
+      input:invalid + span::before {
+        content: "✖";
+        color: red;
+      }
+      input:valid + span::before {
+        content: "✓";
+        color: green;
+      }
+      .row {
+        display: flex;
+      }
+      input:required + span::after {
+        content: "required";
+      }
     </style>
   </head>
 
@@ -102,26 +116,23 @@
         <legend>Feedback form</legend>
 
         <i><p>Required fields are labelled with * .</p></i>
-        <div>
+        <div class="row">
           <label for="fname"
-            >First name: <abbr title="Field is required">*</abbr
-            ><span class="isRequired">Field is required</span></label
+            >First name: <abbr title="Field is required">*</abbr></label
           >
           <input id="fname" name="fname" type="text" required />
           <span></span>
         </div>
-        <div>
+        <div class="row">
           <label for="lname"
             >Last name: <abbr title="Field is required">*</abbr>
-            <span class="isRequired">Field is required</span></label
-          >
+          </label>
           <input id="lname" name="lname" type="text" required />
           <span></span>
         </div>
         <div>
-          <label for="email">Email address: </label>
+          <label for="email"> Email address: </label>
           <input id="email" name="email" type="email" optional />
-          <span></span>
         </div>
         <div><button>Submit</button></div>
       </fieldset>
