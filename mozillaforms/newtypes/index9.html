@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Advanced styling: Task 2</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      button,
+      input,
+      select {
+        -webkit-appearance: none;
+        appearance: none;
+        position: relative;
+        font-family: inherit;
+        font-size: 100%;
+        padding: 0;
+        margin: 0;
+        vertical-align: -2px;
+      }
+      input[type="radio"] {
+        border: 1px solid #333;
+        width: 1em;
+        height: 1em;
+      }
+      input[type="radio"]:before {
+        width: 0.85em;
+        height: 0.85em;
+        background-color: rgb(94, 92, 92);
+        color: goldenrod;
+        content: "✔";
+        position: absolute;
+        font-size: 1.2em;
+        right: -1px;
+        top: -0.12em;
+        visibility: hidden;
+      }
+      input[type="radio"]:checked::before {
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <fieldset>
+        <legend>Who is your favorite pony?</legend>
+        <ul>
+          <li>
+            <label for="pinkie">Pinkie Pie</label>
+            <input type="radio" id="pinkie" name="pony" value="pinkie" />
+          </li>
+          <li>
+            <label for="rainbow">Rainbow Dash</label>
+            <input type="radio" id="rainbow" name="pony" value="rainbow" />
+          </li>
+          <li>
+            <label for="twilight">Twilight Sparkle</label>
+            <input type="radio" id="twilight" name="pony" value="twilight" />
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+  </body>
+</html>
