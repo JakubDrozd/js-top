@@ -4,19 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <html lang="en-us">
+    <link rel="icon" type="image/x-icon" href="./favicon_io/favicon.ico" />
+    <title>Form</title>
     <style>
       .mobile {
         visibility: hidden;
       }
       @media screen and (max-width: 700px) {
-        input[type="text"] {
-          width: 75%;
-        }
         .mobile {
           visibility: visible;
           font-style: italic;
-          font-size: 0.7em;
+          font-size: 0.8rem;
           background-color: black;
           color: #f8f8f8;
           width: fit-content;
@@ -36,12 +35,21 @@
       }
       form {
         width: 70%;
+        padding: 1em;
+      }
+      fieldset {
+        background-color: rgb(245, 245, 238);
+      }
+      legend {
+        background-color: black;
+        color: #f8f8f8;
+        padding: 0.3em;
       }
       .form-row {
         text-align: center;
         display: flex;
         flex-direction: column;
-        margin-bottom: 1em;
+        margin-bottom: 1.3em;
         margin-left: 1em;
       }
       .form-row > button {
@@ -51,11 +59,12 @@
         color: #f8f8f8;
         justify-content: center;
         align-self: center;
-        font-size: 1em;
+        font-size: 1rem;
         padding: 0.3em;
         appearance: none;
         border: rgb(218, 214, 214) 1px solid;
         border-radius: 3px;
+        height: 2em;
       }
       .form-row > button:hover {
         background-color: rgb(64, 169, 230);
@@ -72,22 +81,37 @@
         width: 35%;
         align-self: center;
       }
+      .form-row input[type="text"]:focus,
+      .form-row input[type="email"]:focus,
+      .form-row input[type="password"]:focus,
+      .form-row input[type="tel"]:focus {
+        -webkit-appearance: none;
+        appearance: none;
+        outline: 0;
+        border: 2px solid rgb(58, 170, 235);
+      }
       .form-row label {
         margin-bottom: 0.5em;
       }
-      #password-minlength {
+      .info {
         text-align: center;
         margin-bottom: 1em;
-        font-size: 0.7em;
+        font-size: 0.7rem;
         font-style: italic;
       }
       input:required {
         border: 2px solid black;
         border-radius: 3px;
       }
+      input:user-invalid {
+        border: red solid 2px;
+      }
       input:user-invalid + span::after {
         content: "✖";
         color: red;
+      }
+      input:valid {
+        border: 2px solid green;
       }
       input:valid + span::after {
         content: "✔";
@@ -107,7 +131,8 @@
         <legend>Form</legend>
         <div class="mobile">Mobile</div>
         <div class="form-row">
-          <label for="name">Name (required)</label>
+          <label for="name">Name <i>(required)</i></label>
+          <span class="info">Range from 3 to 16 characters</span>
           <div class="container">
             <input
               type="text"
@@ -116,17 +141,19 @@
               autocomplete="name"
               pattern="^[a-zA-z0-9_-]{3,16}$"
               required
+              placeholder="Jonathan"
             />
             <span></span>
           </div>
         </div>
         <div class="form-row">
-          <label for="email">Email (required)</label>
+          <label for="email">Email <i>(required)</i></label>
           <div class="container">
             <input
               type="email"
               name="email"
               id="email"
+              autocomplete="email"
               placeholder="john@example.com"
               required
             />
@@ -134,9 +161,9 @@
           </div>
         </div>
         <div class="form-row">
-          <label for="pwd">Password (required)</label>
-          <span id="password-minlength">
-            Should have 1 lowercase letter, 1 uppercase letter, 1 number, and be
+          <label for="pwd">Password <i>(required)</i></label>
+          <span class="info">
+            Should consist of 1 lowercase letter, 1 uppercase letter, 1 number, and be
             at least 8 characters long</span
           >
           <div class="container">
@@ -152,7 +179,7 @@
           </div>
         </div>
         <div class="form-row">
-          <label for="phone">Phone</label
+          <label for="phone">Phone <i>(optional)</i></label
           ><input
             type="tel"
             name="phone"
