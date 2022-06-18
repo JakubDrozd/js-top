@@ -6,10 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      .mobile {
+        visibility: hidden;
+      }
+      @media screen and (max-width: 700px) {
+        input[type="text"] {
+          width: 75%;
+        }
+        .mobile {
+          visibility: visible;
+          font-style: italic;
+          font-size: 0.7em;
+          background-color: black;
+          color: #f8f8f8;
+          width: fit-content;
+          padding: 2px;
+        }
+      }
+
       @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
       * {
         font-family: "Josefin Sans", sans-serif;
         border-radius: 3px;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      form {
+        width: 70%;
       }
       .form-row {
         text-align: center;
@@ -79,6 +105,7 @@
     <form action="" method="post">
       <fieldset>
         <legend>Form</legend>
+        <div class="mobile">Mobile</div>
         <div class="form-row">
           <label for="name">Name (required)</label>
           <div class="container">
@@ -118,9 +145,8 @@
               name="password"
               id="pwd"
               required
-              minlength="8"
               aria-describedby="password-minlegth"
-              pattern="(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             />
             <span></span>
           </div>
@@ -138,5 +164,21 @@
         <div class="form-row"><button type="submit">Submit</button></div>
       </fieldset>
     </form>
+    <script>
+      const name = document.querySelector("#name");
+      name.addEventListener("invalid", () => {
+        name.setCustomValidity("Please enter your name.");
+      });
+      const password = document.querySelector("#pwd");
+      password.addEventListener("invalid", () => {
+        password.setCustomValidity(
+          "Should have 1 lowercase letter, 1 uppercase letter, 1 number, and be at least 8 characters long"
+        );
+      });
+      const email = document.querySelector("#email");
+      email.addEventListener("invalid", () => {
+        email.setCustomValidity("Invalid email address");
+      });
+    </script>
   </body>
 </html>
