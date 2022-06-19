@@ -56,7 +56,7 @@
         opacity: 0;
       }
       input[type="email"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
-      input[type="pasword"]:invalid:focus:not(:placeholder-shown)
+      input[type="password"]:invalid:focus:not(:placeholder-shown)
         ~ .requirements {
         max-height: 200px;
         padding: 1em;
@@ -141,12 +141,13 @@
             name="password"
             id="password"
             placeholder=" "
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
           /><label for="password">Password</label>
           <span></span>
           <div class="requirements">
-            Your password must be at least 6 characters as well as contain at
-            least one uppercase, one lowercase, and one number.
+            Your password must be at least 8 characters as well as contain at
+            least one uppercase, one lowercase, one special character and one
+            number.
           </div>
         </div>
         <div class="form-row">
