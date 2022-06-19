@@ -6,49 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
       * {
-        font-family: serif;
+        font-family: "Josefin Sans", sans-serif;
         font-size: 1em;
       }
       body {
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: rgb(159, 217, 218);
       }
       .form-row {
         position: relative;
         margin-bottom: 1em;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
       }
       label {
-        top: 3px;
-        left: 1.5em;
+        top: 0.25em;
+        left: auto;
         position: absolute;
         opacity: 0.3;
+        font-weight: 600;
       }
       fieldset {
-        border: 1px solid #ccc;
+        border: 1px solid rgb(184, 214, 214);
         background-color: rgb(70, 98, 110);
       }
 
-      input[type="text"]:focus + label {
+      input[type="text"]:focus + label,
+      input[type="email"]:focus + label,
+      input[type="password"]:focus + label {
         opacity: 0;
       }
+      input[type="text"]:not(:placeholder-shown) + label,
+      input[type="password"]:not(:placeholder-shown) + label,
+      input[type="email"]:not(:placeholder-shown) + label {
+        opacity: 0;
+      }
+      input[type="text"]:invalid:not(:placeholder-shown):not(:focus),
+      input[type="email"]:invalid:not(:placeholder-shown):not(:focus),
+      input[type="password"]:invalid:not(:placeholder-shown):not(:focus) {
+        background: rgb(240, 182, 182);
+      }
+      input:invalid:not(:placeholder-shown):not(:focus) + label {
+        opacity: 0;
+      }
+      input[type="email"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
+      input[type="pasword"]:invalid:focus:not(:placeholder-shown)
+        ~ .requirements {
+        max-height: 200px;
+        padding: 1em;
+      }
       form {
-        width: 50%;
+        width: 30%;
         display: flex;
         flex-direction: column;
         gap: 1em;
         align-items: center;
         padding: 1em;
+        text-align: center;
       }
       legend {
         background-color: cadetblue;
         color: white;
         border-radius: 3px;
         border: 1px solid rgb(159, 217, 218);
+        padding-right: 3em;
+        padding-left: 3em;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
       }
       button[type="submit"] {
         -webkit-appearance: none;
@@ -60,6 +90,19 @@
       }
       input {
         border: 1px solid rgb(159, 217, 218);
+        text-align: center;
+        vertical-align: center;
+      }
+      .requirements {
+        padding: 0 30px 0 50px;
+        color: #999;
+        max-height: 0;
+        transition: 0.28s;
+        overflow: hidden;
+        color: rgb(238, 113, 113);
+        font-style: italic;
+        text-align: center;
+        font-size: 0.9em;
       }
     </style>
   </head>
@@ -68,12 +111,36 @@
       <fieldset>
         <legend>Form</legend>
         <div class="form-row">
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" placeholder=" " required />
           <label for="name">First Name</label>
         </div>
         <div class="form-row">
-          <input type="text" name="lastname" id="lastname" />
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            placeholder=" "
+            required
+          />
           <label for="lastname">Last Name</label>
+        </div>
+        <div class="form-row">
+          <input type="email" name="email" id="email" placeholder=" " />
+          <label for="email">Email</label>
+          <div class="requirements">Must be a valid email address</div>
+        </div>
+        <div class="form-row">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder=" "
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+          /><label for="password">Password</label>
+          <div class="requirements">
+            Your password must be at least 6 characters as well as contain at
+            least one uppercase, one lowercase, and one number.
+          </div>
         </div>
         <div class="form-row">
           <button type="submit">Submit</button>
