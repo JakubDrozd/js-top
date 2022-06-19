@@ -99,9 +99,13 @@
         font-size: 0.7rem;
         font-style: italic;
       }
+      
       input:required {
         border: 2px solid black;
         border-radius: 3px;
+      }
+      input:-webkit-autofill {
+        background-color: beige;
       }
       input:user-invalid {
         border: red solid 2px;
@@ -117,6 +121,7 @@
         content: "✔";
         color: green;
       }
+
       .container {
         display: flex;
         align-items: center;
