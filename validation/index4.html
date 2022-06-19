@@ -61,6 +61,11 @@
         max-height: 200px;
         padding: 1em;
       }
+      input[type="email"]:valid:not(:placeholder-shown) ~ span::after,
+      input[type="password"]:valid:not(:placeholder-shown) ~ span::after {
+        content: "Correct ✓";
+        color: rgb(159, 217, 218);
+      }
       form {
         width: 30%;
         display: flex;
@@ -128,6 +133,7 @@
           <input type="email" name="email" id="email" placeholder=" " />
           <label for="email">Email</label>
           <div class="requirements">Must be a valid email address</div>
+          <span></span>
         </div>
         <div class="form-row">
           <input
@@ -137,6 +143,7 @@
             placeholder=" "
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
           /><label for="password">Password</label>
+          <span></span>
           <div class="requirements">
             Your password must be at least 6 characters as well as contain at
             least one uppercase, one lowercase, and one number.
