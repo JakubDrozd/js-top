@@ -18,5 +18,15 @@ Animal.prototype.play = function (length) {
   this.energy -= length;
 };
 
+function Lion(...args) {
+  Animal.apply(this, args);
+  this.mightyRoar = function () {
+    console.log("ROOOOOOOARRRRR");
+  };
+}
+
+Lion.prototype = Object.create(Animal.prototype);
+
 const leo = new Animal("Leo", 7);
 const snoop = new Animal("Snoop", 10);
+const tim = new Lion("Tim", 50);
