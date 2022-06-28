@@ -1,19 +1,15 @@
-const cat = {
-  init: function (sound) {
-    this.sound = sound;
-    return this;
-  },
-  makeSound: function () {
-    console.log(this.sound);
+const Car = function (color) {
+  this.color = color;
+};
+
+Car.prototype = {
+  getColor() {
+    return this.color;
   },
 };
 
-const mark = Object.create(cat);
-mark.init("meow");
-mark.makeSound();
+const ToyCar = function () {};
 
-const waffles = Object.create(cat);
-waffles.init("meooooow!");
-waffles.makeSound();
+ToyCar.prototype = Object.create(Car.prototype);
 
-console.log(`Is mark a cat? ${cat.isPrototypeOf(mark)}`);
+const legoCar = new ToyCar();
