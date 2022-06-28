@@ -4,7 +4,7 @@ class Animal {
     this.energy = energy;
   }
   eat(amount) {
-    onsole.log(`${this.name} is eating.`);
+    console.log(`${this.name} is eating.`);
     this.energy += amount;
   }
   sleep(length) {
