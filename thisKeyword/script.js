@@ -19,18 +19,20 @@ const me = {
 
 console.log(talk.apply(me, ["pl", false]));
 
-function Person(name) {
-  this.name = name;
-  this.talk = function () {
-    console.log(this);
-  };
-
-  setTimeout(
-    function () {
+class Person {
+  constructor(name) {
+    this.name = name;
+    this.talk = function () {
       console.log(this);
-    }.bind(this),
-    100
-  );
+    };
+
+    setTimeout(
+      function () {
+        console.log(this);
+      }.bind(this),
+      100
+    );
+  }
 }
 
 const newMe = new Person("Jakub");
