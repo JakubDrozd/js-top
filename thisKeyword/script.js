@@ -21,7 +21,16 @@ console.log(talk.apply(me, ["pl", false]));
 
 function Person(name) {
   this.name = name;
-  console.log(this);
+  this.talk = function () {
+    console.log(this);
+  };
+
+  setTimeout(
+    function () {
+      console.log(this);
+    }.bind(this),
+    100
+  );
 }
 
 const newMe = new Person("Jakub");
