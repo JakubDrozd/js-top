@@ -29,3 +29,17 @@ const ben = new Person("Ben");
 Person.prototype.talk = function () {
   return `I'm new talk `;
 };
+
+Person.prototype.talk = function () {
+  return `Ciao, io sono ${this.name}`;
+};
+
+function privateCreatePerson(name) {
+  return {
+    talk() {
+      return `I'm ${name}`;
+    },
+  };
+}
+
+const mePrivate = privateCreatePerson("Jakub");
