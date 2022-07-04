@@ -1,6 +1,14 @@
-* {
-  background-repeat: no-repeat;
+@font-face {
+  font-family: "myFont";
+  src: url(./font.ttf);
+  font-style: normal;
+}
+
+body {
   background: url(./avatar.png);
+  background-repeat: no-repeat;
+  font-family: "myFont";
+  font-size: 100px;
 }
 
 .hello {
