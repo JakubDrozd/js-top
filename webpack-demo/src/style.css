@@ -1,4 +1,8 @@
+* {
+  background-repeat: no-repeat;
+  background: url(./avatar.png);
+}
+
 .hello {
   color: red;
-  background: url(./avatar.png);
 }
