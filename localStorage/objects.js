@@ -23,4 +23,8 @@ let people_deserialized = JSON.parse(localStorage.getItem("arrays"));
 
 console.log(localStorage);
 
+for (let person of people_deserialized) {
+  console.log(`${person.name} ${person.age}`);
+}
+
 console.log(people_deserialized);
