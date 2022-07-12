@@ -1,0 +1,35 @@
+.dropBtn {
+  border: none;
+  padding: 1rem;
+  font-size: 1.7rem;
+  background-color: lightgreen;
+  color: white;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dropContent {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  padding-left: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  background-color: #ddd;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dropdown {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.active {
+  display: flex;
+  max-height: 200px;
+}

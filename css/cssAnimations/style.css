@@ -1,0 +1,31 @@
+body {
+  padding: 50px;
+}
+
+.box {
+  display: inline-block;
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  padding: relative;
+  animation-name: myFrames;
+  animation-duration: 300ms;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.box.is-paused {
+  animation-play-state: paused;
+}
+
+@keyframes myFrames {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
