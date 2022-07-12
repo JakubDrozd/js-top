@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        color: #f8f8f8;
+        font: 1em helvetica;
+      }
+      .yourMessage {
+        margin-top: 1em;
+      }
+      .personalData {
+        margin-bottom: 1em;
+      }
+      .pickGames {
+        margin-bottom: 1em;
+      }
+      .message {
+        margin-bottom: 1em;
+      }
+      .personalDataTag {
+        font: 1em sans-serif;
+        text-align: center;
+        margin-bottom: 1em;
+        font-weight: 600;
+      }
+      .pickYourExperience {
+        margin: 1em;
+      }
+      .message {
+        margin: 1em;
+      }
+      .buttons {
+        margin-left: 1em;
+      }
+      input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1em;
+        height: 1em;
+        border: 0.15em solid currentColor;
+        transform: translateY(-0.075em);
+        margin-top: 0.5em;
+        display: grid;
+        place-content: center;
+      }
+
+      input[type="checkbox"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em #333;
+      }
+
+      input[type="checkbox"]:checked::before {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <form action="example.com/path" method="post">
+      <fieldset>
+        <div class="personalData">
+          <legend class="personalDataTag">Personal Data</legend>
+          <label for="firstName">Name: </label>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            placeholder="Will"
+          />
+
+          <label for="lastName">Last Name: </label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            placeholder="Smith"
+          />
+          <label for="birth">Date of birth: </label
+          ><input type="date" name="birth" id="birth" />
+        </div>
+        <label for="email">E-mail: </label
+        ><input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="you@example.com"
+        />
+        <label for="password">Password: </label
+        ><input type="password" name="password" id="password" />
+
+        <label for="post">Pick your post: </label>
+        <select name="post" id="post" class="post">
+          <option value="choice" selected>--- select ---</option>
+          <optgroup label="Developer"></optgroup>
+          <option value="frontend">Frontend Developer</option>
+          <option value="backend">Backend Developer</option>
+          <option value="fullstack">Fullstack</option>
+          <optgroup label="Network Administration">
+            <option value="admin">Network Administrator</option>
+            <option value="assistant">Assistant</option>
+          </optgroup>
+        </select>
+      </fieldset>
+      <div class="pickYourExperience">
+        <h3>Your experience:</h3>
+        <div class="firstExperience">
+          <input type="radio" name="experience" id="none" />
+          <label for="none">None</label>
+        </div>
+        <div class="secondExperience">
+          <input type="radio" name="experience" id="low" />
+          <label for="low">0-1 year (expected)</label>
+        </div>
+        <div class="thirdExperience">
+          <input type="radio" name="experience" id="middle" />
+          <label for="midddle">2-3 years</label>
+        </div>
+        <div class="fourthExperience">
+          <input type="radio" name="experience" id="senior" />
+          <label for="senior">3-5 years</label>
+          <div class="employeeMessage"></div>
+        </div>
+        <div class="pickGames">
+          <h3>What games you have experience in?</h3>
+          <div class="gameOne">
+            <input type="checkbox" name="game" id="rpg" />
+            <label for="strat">Strategy</label>
+          </div>
+          <div class="gameTwo">
+            <input type="checkbox" name="game" id="adventure" />
+            <label for="rpg">RPG</label>
+          </div>
+          <div class="gameThree">
+            <input type="checkbox" name="game" id="strat" />
+            <label for="adventure">Adventure</label>
+          </div>
+        </div>
+      </div>
+      <div class="message">
+        <textarea
+          name="yourMessage"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Your message"
+        ></textarea>
+      </div>
+      <div class="buttons">
+        <button type="submit">Apply</button>
+        <button type="reset">Reset</button>
+        <button type="button">Click</button>
+      </div>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>

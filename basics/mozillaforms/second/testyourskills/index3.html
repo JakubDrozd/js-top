@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Basic controls: Task 2</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <fieldset>
+        <legend>Who is your favorite pony?</legend>
+        <ul>
+          <li>
+            <input
+              type="radio"
+              name="favoritePony"
+              id="pinkie"
+              checked="checked"
+            />
+            <label for="pinkie">Pinkie Pie</label>
+          </li>
+          <li>
+            <input type="radio" name="favoritePony" id="rainbow" />
+            <label for="rainbow">Rainbow Dash</label>
+          </li>
+          <li>
+            <input type="radio" name="favoritePony" id="twilight" />
+            <label for="twilight">Twilight Sparkle</label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>Hotdog preferences</legend>
+        <ul>
+          <li>
+            <input type="checkbox" name="toppings" id="vegan" />
+            <label for="vegan">Vegan</label>
+          </li>
+          <li>
+            <input type="checkbox" name="toppings" id="onions" />
+            <label for="onions">Onions</label>
+          </li>
+          <li>
+            <input type="checkbox" name="toppings" id="mustard" /><label
+              for="mustard"
+            >
+              Mustard</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" name="toppings" id="ketchup" /><label
+              for="ketchup"
+            >
+              Ketchup</label
+            >
+          </li>
+        </ul>
+        <label for="mail">E-mail: </label>
+        <input type="email" name="user_mail" id="mail" />
+        <p></p>
+        <label for="search">Search: </label
+        ><input type="search" name="search" id="search" />
+        <p></p>
+        <label for="phone">Phone number: </label
+        ><input type="tel" name="phone" id="phone" />
+        <p></p>
+        <label for="adress">URL: </label
+        ><input type="url" name="adress" id="adress" />
+        <p></p>
+        <label for="amount">Amount: </label
+        ><input type="number" name="amount" id="amount" min="1" max="5" />
+        <label for="price">Price range: </label
+        ><input
+          type="range"
+          name="price"
+          id="price"
+          min="1000"
+          max="30000"
+          step="100"
+          value="1000"
+        />
+        <output class="price" for="price"></output>
+        <p></p>
+        <label for="birth">Date of birth: </label>
+        <input type="date" name="date" id="date" min="2004-01-01" />
+        <p></p>
+        <label for="colorPicker">Pick your color</label>
+        <input type="color" name="colorPicker" id="colorPicker" />
+      </fieldset>
+      <p></p>
+      <button>Submit</button>
+    </form>
+    <script>
+      const price = document.querySelector("#price");
+      const output = document.querySelector(".price");
+
+      output.textContent = price.value;
+
+      price.addEventListener("input", () => {
+        output.textContent = price.value;
+      });
+    </script>
+  </body>
+</html>
