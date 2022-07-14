@@ -19,7 +19,7 @@
   </head>
 
   <body>
-    <form>
+    <form novalidate>
       <h2>Enter your support query</h2>
       <ul>
         <li>
@@ -30,6 +30,7 @@
             id="uname"
             required
             pattern="^[a-z]\.[a-z0-9]{3,}$"
+            minlength="5"
           />
         </li>
         <li>
