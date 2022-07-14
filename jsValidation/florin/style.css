@@ -101,3 +101,8 @@ body {
   visibility: visible;
   color: red;
 }
+
+.form-control.error small {
+  visibility: visible;
+  color: red;
+}
