@@ -30,10 +30,10 @@ input:focus:invalid {
   font-size: 80%;
   color: white;
   background-color: #900;
-  background-repeat: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
   box-sizing: border-box;
 }
 
 .error.active {
-  padding: 0;
+  padding: 0.3em;
 }
