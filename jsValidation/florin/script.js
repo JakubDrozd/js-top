@@ -51,6 +51,15 @@ function checkInputs() {
   } else {
     setSuccessFor(password2);
   }
+
+  if (
+    username.parentElement.className === "form-control success" &&
+    email.parentElement.className === "form-control success" &&
+    password.parentElement.className === "form-control success" &&
+    password2.parentElement.className === "form-control success"
+  ) {
+    alert("Success!");
+  }
 }
 
 function setErrorFor(input, message) {
