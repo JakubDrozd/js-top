@@ -1,20 +1,16 @@
-function newGIF() {
+async function newGIF() {
   searchValue = search.value.trim();
   if (!searchValue) {
     img.src =
       "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640";
   }
-  fetch(
+  const response = await fetch(
     `https://api.giphy.com/v1/gifs/translate?api_key=daznyQmc4lCmAtHAMrcfRXm9cNggNKAS&s=${searchValue}`,
     { mode: "cors" }
-  )
-    .then((response) => response.json())
-    .then((response) => (img.src = response.data.images.original.url))
-    .catch(
-      (err) =>
-        (img.src =
-          "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640")
-    );
+  );
+  response.json().then(function (response) {
+    img.src = response.data.images.original.url;
+  });
 }
 
 window.onload = newGIF;
