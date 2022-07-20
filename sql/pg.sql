@@ -1,1 +1,2 @@
-SELECT LIMIT 15 channel FROM web_events
+SELECT id, account_id, total_amt_usd FROM orders
+ORDER BY total_amt_usd ASC LIMIT 20
