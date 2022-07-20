@@ -1,0 +1,1 @@
+SELECT LIMIT 15 channel FROM web_events
