@@ -9,10 +9,7 @@ const getUserData = () => {
 
 const validateData = () => {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("2. validate");
-      resolve();
-    }, 900);
+    reject("ValidationError");
   });
 };
 
@@ -34,4 +31,13 @@ const sendEmail = () => {
   });
 };
 
-getUserData().then(validateData).then(registerUser).then(sendEmail);
+getUserData()
+  .then(validateData)
+  .then(registerUser)
+  .then(sendEmail)
+  .then(() => {
+    console.log("Email sent");
+  })
+  .catch((err) => {
+    console.log(`Error: ${err}`);
+  });
