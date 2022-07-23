@@ -1,37 +1,37 @@
 const getUserData = () => {
-  setTimeout(() => {
-    console.log("1. get user data");
-  }, 800);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("1. get user data");
+      resolve();
+    }, 800);
+  });
 };
 
 const validateData = () => {
-  setTimeout(() => {
-    console.log("2. validate");
-  }, 900);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("2. validate");
+      resolve();
+    }, 900);
+  });
 };
 
 const registerUser = () => {
-  setTimeout(() => {
-    console.log("3. register");
-  }, 400);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("3. register");
+      resolve();
+    }, 400);
+  });
 };
 
 const sendEmail = () => {
-  setTimeout(() => {
-    console.log("4. send email");
-  }, 200);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("4. send email");
+      resolve();
+    }, 200);
+  });
 };
 
-new Promise((resolve, reject) => {
-  setTimeout(() => {
-    console.log("working...");
-    resolve(2);
-  }, 800);
-})
-  .then((response) => {
-    console.log("end!");
-    return response;
-  })
-  .then((response) => {
-    console.log(response);
-  });
+getUserData().then(validateData).then(registerUser).then(sendEmail);
