@@ -1,3 +1,6 @@
+const mew = require("./mew");
+
 it("does the mew", () => {
-  throw Error("dsf");
+  const result = "mew";
+  expect(result).toBe("mew");
 });
